@@ -1,6 +1,9 @@
 VDR Plug-in 'vodcatcher' Revision History
 -----------------------------------------
 
+2009-10-03: Version 0.2.2
+  - Fixed gcc-4.4 issue
+
 2008-08-10: Version 0.2.1
   - Update of the Italian translation by Diego Pierotto <vdr-italian@tiscali.it>
   - Updated README
@@ -22,4 +25,4 @@ VDR Plug-in 'vodcatcher' Revision History
     if Curl will output some verbose messages to stderr/stdout.
 
 2007-11-25: Version 0.1.0
-  * Initial Release
+  - Initial Release
