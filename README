@@ -1,0 +1,135 @@
+vdr-vodcatcher - a video podcast plug-in for the Video Disk Recorder (VDR)
+==========================================================================
+
+Written by:
+    Tobias Grimm <tg@e-tobi.net>
+
+Project's homepage:
+    http://www.e-tobi.net/blog/pages/vdr-vodcatcher
+
+Copyright:
+    (C) 2007 - 2008 Tobias Grimm
+
+License:
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the
+    Free Software Foundation; either version 2 of the License, or (at your
+    option) any later version.
+   
+    This program is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+    or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+    more details.
+   
+    You should have received a copy of the GNU General Public License along with
+    this program (see file `COPYING`); if not, write to the
+    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA 02110-1301 USA
+    
+Translations:
+    it: Diego Pierotto <vdr-italian@tiscali.it>
+
+
+Description:
+-----------
+
+The Vodcatcher plug-in allows to parse RSS feeds containing video streams as
+enclosures. The plug-in will play such streams by passing them to the 
+MPlayer plug-in [1] or the Xineliboutput plug-in [2].
+
+Besides the standard RSS feeds with video enclosures, the RSS services of
+videocast.srtwist.net are supported too.
+
+
+Requirements:
+------------
+
+The plugin requires libcurl, vdr 1.6.0 or above and the Mplayer or Xineliboutput
+plug-in.
+
+
+Building:
+--------
+
+The following make variables can be overriden:
+
+    DEFAULT_CACHE_DIR    Specifies the default cache dir, where the xml feeds
+                         get cached. If not specified, this defaults to
+                         /var/cache/vdr-plugin-vodcatcher. The cache dir
+                         can also be changed at runtime using the 
+                         --cache option. 
+
+
+Command line arguments:
+-----------------------
+
+The following parameters are available:
+
+    --cache=<DIR>    Specify the cache dir, where the xml feeds get cached.
+                     This defaults to /var/cache/vdr-plugin-vodcatcher.
+
+
+Configuration
+-------------
+
+In order to allow the MPlayer plug-in to play back the streams passed in by the
+Vodcatcher, you must add the following entry to the mplayersources.conf file:
+
+    /tmp;Vodcatcher;0
+
+An external configuration file named "vodcatchersources.conf" must exist in the
+subdirectory "plugins/" in  VDR's configuration directory.
+
+In vodcatchersources.conf the URL's of the RSS feeds can be configured in the
+following way:
+
+    #
+    # videocast.srtwist.net
+    #
+    FEED_URL=http://videocast.srtwist.net
+    
+Multiple FEED_URL-entries can be specified. A '#' indicates a comment just like
+in shell scripts.
+
+
+Setup parameters:
+-----------------
+
+    Max. download cache age (days)    The number of days, files should be kept
+                                      in the local cache.
+                                      default: 30 days
+
+    Media Player                      The media player used for playback. Can
+                                      be "MPlayer" or "Xineliboutput".
+
+
+Usage:
+------
+
+By opening the plug-in's main menu entry in VDR's OSD, you enter the feed menu.
+This menu lists all the feeds you have configured in the file
+"vodcatchersources.conf". If the feed could not be downloaded or is not yet
+downloaded, it will be listed as "unknown". In this case, just try again later
+or check the URL in the config file.
+
+By selecting a feed from the menu and pressing OK, a menu listing all the feed
+items will open. If a feed item is linked to another RSS feed, you you press 
+OK again to open this feed. If the selected feed item contains a video stream,
+you can start playback with the GREEN key. If the stream is available in
+different qualities (only possible with videocast.srtwist.net), you can toggle
+the quality with the YELLOW key, before playing it.
+
+The play back plug-in might need a while to cache the video stream, before
+playback starts. This can be several seconds depending on your plugin
+settings and the download speed.
+
+
+Known problems and todo's:
+--------------------------
+
+- Recording of streams is not yet implemented
+
+---
+
+[1]: http://www.muempf.de
+[2]: http://sourceforge.net/projects/xineliboutput

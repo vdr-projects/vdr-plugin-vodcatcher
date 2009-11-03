@@ -1,0 +1,21 @@
+vdr-vodcatcher makes use of the following OpenSource tools and components:
+
+CxxTest
+-------
+
+CxxTest is a JUnit/CppUnit/xUnit-like framework for C++.
+
+Author   : Erez Volk <erez_v at users.sourceforge.net>
+Homepage : http://cxxtest.sourceforge.net/
+License  : GNU Lesser General Public License
+
+
+TinyXml
+-------
+
+TinyXml is a simple, small, C++ XML parser.
+
+Authors  : Lee Thomason <leethomason at mindspring.com>
+           Yves Berquin
+Homepage : http://www.grinninglizard.com/tinyxml/index.html
+License  : zlib/libpng License

@@ -1,0 +1,25 @@
+VDR Plug-in 'vodcatcher' Revision History
+-----------------------------------------
+
+2008-08-10: Version 0.2.1
+  - Update of the Italian translation by Diego Pierotto <vdr-italian@tiscali.it>
+  - Updated README
+
+2008-08-09: Version 0.2.0
+  - Fixed Galacticast feed in example
+  - Updated GPL license text
+  - Added Italian translation from the Italian VDR Community <vdr-italian@tiscali.it>
+  - Added support for Xineliboutput as media player
+  - Dropped non-gettext I18N support
+
+2008-07-26: Version 0.1.2
+  - Fixed GCC 4.3 include issue
+
+2007-11-27: Version 0.1.1
+  - Added support for <videocast:subfeed>, <link> tag is ignored now
+  - Changed user agent to vdr-vodcatcher/0.1
+  - Introduced DEBUG variable/define in Makefile, which currently only controls,
+    if Curl will output some verbose messages to stderr/stdout.
+
+2007-11-25: Version 0.1.0
+  * Initial Release

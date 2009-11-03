@@ -1,0 +1,60 @@
+# German translations for PACKAGE package
+# German messages for PACKAGE.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Tobias <tg@e-tobi.net>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-vodcatche 0.1.0\n"
+"Report-Msgid-Bugs-To: <tg@e-tobi.net>\n"
+"POT-Creation-Date: 2008-08-06 20:37+0200\n"
+"PO-Revision-Date: 2007-11-25 13:50+0100\n"
+"Last-Translator: Tobias Grimm <tg@e-tobi.net>\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Max. download cache age (days)"
+msgstr "Max. Haltezeit Cache (Tage)"
+
+msgid "Media Player"
+msgstr "Media Player"
+
+msgid "Video Podcasts"
+msgstr "Video Podcasts"
+
+msgid "Starting playback, please wait..."
+msgstr "Starte Wiedergabe, bitte warten...."
+
+msgid "Playback failed!"
+msgstr "Wiedergabe fehlgeschlagen!"
+
+msgid "Downloading...Please wait!"
+msgstr "Download in Arbeit... Bitte warten!"
+
+msgid "No entries!"
+msgstr "Keine Einträge!"
+
+msgid "Play"
+msgstr "Abspielen"
+
+msgid "Record"
+msgstr "Aufnehmen"
+
+msgid "Browse and play video podcasts"
+msgstr "Video Podcasts anzeigen und abspielen"
+
+msgid "Vodcatcher"
+msgstr "Vodcatcher"
+
+msgid "Low"
+msgstr "Niedrig"
+
+msgid "Medium"
+msgstr "Mittel"
+
+msgid "High"
+msgstr "Hoch"
