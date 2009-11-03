@@ -84,7 +84,7 @@ public:
 
     void TestVersion()
     {
-        TS_ASSERT_EQUALS(string("0.2.1"), plugin->Version());
+        TS_ASSERT_EQUALS(string("0.2.2"), plugin->Version());
     }
 
     void TestDescription()
