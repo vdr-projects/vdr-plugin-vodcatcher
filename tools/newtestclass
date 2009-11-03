@@ -1,0 +1,29 @@
+#!/bin/sh
+
+class=$1
+lowerclass=`echo $class | tr [:upper:] [:lower:]`
+include="$lowerclass".h
+testfile="$lowerclass"_test.cc
+
+cp `dirname $0`/sourcefileheader.txt $testfile
+
+cat >> $testfile <<EOF
+#include <cxxtest/TestSuite.h>
+#include "#INCLUDE#"
+
+namespace
+{
+
+class #CLASS#Test: public CxxTest::TestSuite
+{
+    public:
+        void TestSimple()
+        {
+        }
+};
+
+};
+EOF
+
+sed "s/#CLASS#/$class/g" $testfile >$testfile.tmp ; mv $testfile.tmp $testfile
+sed "s/#INCLUDE#/$include/g" $testfile >$testfile.tmp ; mv $testfile.tmp $testfile

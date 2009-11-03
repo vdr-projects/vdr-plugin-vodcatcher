@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+# clean
+make clean
+
+if [ -n "`svn st`" ] ; then
+    echo "uncommited changes !!!"
+    exit 1
+fi
+
+CXXFLAGS="-O0 -fPIC -ggdb -Wall -Woverloaded-virtual"
+
+# compile and run test
+make CXXFLAGS="$CXXFLAGS" -s runtests
+
+# compile production code
+make CXXFLAGS="$CXXFLAGS" -s LIBDIR=. VDRDIR=/usr/include/vdr LOCALEDIR=/tmp/locales all
+
+# clean
+make clean
+
+# make distribution tarball
+make dist
+
+# read version
+VERSION=`grep 'static const char VERSION\[\] =' src/Version.h | awk '{ print $6 }' | sed -e 's/[";]//g'`
+
+# tag version
+echo "Tagging: $VERSION"
+svn cp -m "Releasing Vodcatcher $VERSION" svn+e-tobi://e-tobi.net/vodcatcher/trunk \
+  "svn+e-tobi://e-tobi.net/vodcatcher/tags/$VERSION"

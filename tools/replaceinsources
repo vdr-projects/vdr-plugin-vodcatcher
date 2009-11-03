@@ -1,0 +1,9 @@
+#!/bin/sh
+
+sources=`find ./ -name *.cc -o -name *.h`
+
+for src in $sources; do
+    echo $src
+    sed "$1" "$src" >"$src".tmp
+    mv "$src".tmp $src
+done

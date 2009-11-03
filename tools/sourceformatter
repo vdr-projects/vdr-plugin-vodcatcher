@@ -1,0 +1,17 @@
+#!/bin/sh
+
+make clean
+
+CCFILES=`find src/ -name *.cc`
+HFILES=`find src/ -name *.h`
+
+SRCFILES="$CCFILES $HFILES"
+
+#
+# Remove trailing whitespace from lines
+#
+
+for file in $SRCFILES ; do
+    sed "s/[[:space:]]*$//" $file >$file.tmp
+    mv $file.tmp $file
+done

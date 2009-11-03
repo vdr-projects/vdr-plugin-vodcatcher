@@ -1,0 +1,31 @@
+#!/bin/sh
+
+class=$1
+lowerclass=`echo $class | tr [:upper:] [:lower:]`
+upperclass=`echo $class | tr [:lower:] [:upper:]`
+headerfile="${lowerclass}.h"
+ccfile="$lowerclass".cc
+
+cp `dirname $0`/sourcefileheader.txt $headerfile
+
+cat >> $headerfile <<EOF
+#ifndef ___${upperclass}_H
+#define ___${upperclass}_H
+
+class $1
+{
+    public:
+};
+
+#endif
+EOF
+
+cp `dirname $0`/sourcefileheader.txt $ccfile
+
+cat >> $ccfile <<EOF
+#include "$headerfile"
+
+??? $class::???(???)
+{
+}
+EOF
